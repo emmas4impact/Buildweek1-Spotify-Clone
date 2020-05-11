@@ -36,21 +36,33 @@ a, a:hover, a:focus {
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
     
-    
+    min-width: 250px;
     width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
     height: 100vh;
-    z-index: 999;
     background: black;
     color: white;
     transition: all 0.3s;
+    padding-bottom: 80px;
+}
+.footer{
+    position: fixed;
+    background: gray;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    text-align: center;
+    color: white;
 }
 h3{
     text-align: center;
     
    
+}
+.image{
+    display: flex;
+    justify-content: space;
+    
 }
 
 
@@ -70,6 +82,7 @@ h3{
 }
 
 #sidebar ul li a {
+    margin-right: 10px;
     padding: 10px;
     font-size: 1.1em;
     display: block;
@@ -90,37 +103,41 @@ ul ul a {
     padding-left: 30px !important;
     background: black;
 }
-.social_media1{
-    position: fixed;
-    
+.install{
     bottom: 0;
     height: 9vh;
     left: 4%;
     color:white;
-    transform: translateX(-20%);
+    
     display: flex;
   }
-  .social_media1 a{
-    
-    
+  .install a{
     color: white;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+  }
+  .install a:hover{
+    color: white;
+   
   }
   
- .social_media{
-    position: absolute;
-    
+ .users{
     bottom: 0;
     left: 20%;
-    transform: translateX(-20%);
     display: flex;
   }
-.social_media a{
+ .fa-user{
+    margin-right: 10px;
     
+ }
+.users a{
     
     color: white;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+  }
+  .users a:hover{
+    color: white;
+    
   }
   
