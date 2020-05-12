@@ -1,6 +1,7 @@
 .wrapper {
     display: flex;
     width: 100%;
+    
     align-items: stretch;
 }
 
@@ -43,14 +44,26 @@ a, a:hover, a:focus {
     color: white;
     transition: all 0.3s;
     padding-bottom: 80px;
+    
 }
 .row{
     background-color: rgb(34, 34, 34);
-    justify-content: space-between;
     
+    
+}
+div a{
+    color: white;
+}
+div a:hover{
+    color: white;
+}
+.col-3{
+    align-items: flex-end;
 }
 #content{
     background-color: rgb(34, 34, 34);
+    
+    width: 100%;
 }
 p{
     text-align: center;
