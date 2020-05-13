@@ -8,13 +8,13 @@ body{
 }
 .row {
   margin: 0;
+  background: none !important;
 }
 #sidebar{
   display: flex;
   flex-direction: column;
   color: white;
   /* background-color: #060b11; */
-
   height: 91vh;
 }
 .main-col {
@@ -213,17 +213,9 @@ div a:hover{
   left: 2px;
   height: 20px;
   content: '';
-  border-left: 4px solid rgb(26, 207, 90); */
-  width: 1px;
+  border-left: 4px solid rgb(26, 207, 90); 
 
 }
-/* .navbar-nav .active::after{
-  display: inline-block;
-  content: '';
-  border-bottom: 2px solid rgb(26, 207, 90);
-  width: 30px;
-  transform: translate(40px, -20px);
-} */
 
 #sidebar-content a:hover{
   transform: scale(1.3);
