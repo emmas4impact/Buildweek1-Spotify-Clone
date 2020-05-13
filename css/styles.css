@@ -187,14 +187,13 @@ div a:hover{
 }
 .play-section{
   min-height: 9vh;
-  max-height: 9vh;
   background-color: rgba(46, 41, 41, 0.836);
-  position: relative;
+  /* padding-bottom: 10px; */
 }
 .musicIcons{
   display: flex;
   justify-content: center;
-  color: #b3b3b2;
+  color: #fff;
 }
 .musicIcons i{
   margin: 0 10px;
@@ -207,14 +206,21 @@ div a:hover{
   background-color: #b3b3b2;
 }
 
-#sidebar-content .active::before{
- 
-  position: absolute;
-  left: 2px;
+#sidebar-content .active::after{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 0;
+    left: 5px;
+    display: block;
+    background: #78387B;
+    transition: all .5s ease;
+  
+}
+#sidebar-content .active:hover::after{
   height: 20px;
-  content: '';
-  border-left: 4px solid rgb(26, 207, 90); 
-
+  left: 5px;
+  background: #78387B;
 }
 
 #sidebar-content a:hover{
@@ -223,10 +229,9 @@ div a:hover{
   transition: all .2s ease-in-out;
 }
 .card:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: all .5s ease-in-out;
 }
-
 #mobileNav{
   display: flex;
   justify-content: space-around;
@@ -239,7 +244,7 @@ div a:hover{
   padding-top: 10px;
   padding-bottom: 10px;
 }
-@media only screen and (min-width:768px) and (max-width:1025px){
+@media only screen and (min-width:780) and (max-width:1025px){
   #sidebar{
     height: 94vh;
   }
@@ -247,16 +252,11 @@ div a:hover{
     min-height: 94vh;
   }
   .play-section{
-    max-height: 6vh;
-    min-height: 6vh;
+    display: block;
   }
-  #volume{
-    position: absolute;
-    top: auto;
-    right: 50px !important;
-  }
+
 }
-@media(max-width:767px){
+@media(max-width:768px){
   #sidebar{
     display: none;
   }
@@ -281,8 +281,7 @@ div a:hover{
   .play-section{
     width: 100%;
     position: fixed;
-    bottom: 7vh;
-    background-color: black;
+    background-color: #282828;
   }
   #mobileNav{
     background-color: rgb(22, 27, 24);
@@ -304,9 +303,105 @@ div a:hover{
     border-radius: 5px;
     background-color: #b3b3b2;
   }
-  #volume{
-    position: relative;
-    top: auto !important;
-    right: 15px !important;
-  }
+
+}
+
+
+
+
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.container-last {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  color: #fff;
+
+}
+#timeline{
+	width: 100%;
+	height: 5px;
+  margin-top: 10px;
+  background-color: #000; 
+  border-radius: 15px;
+}
+
+#playhead{
+	height: 5px;
+	border-radius: 5px;
+	margin-top: 1px;
+	background: grey;
+}
+
+#volume {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  padding-top: 25px;
+}
+#volume i {
+  margin-left: 10px;
 }
