@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="artists.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <title>Spotify</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <i class="fab fa-spotify"></i>
+          <p>Spotify</p>
+        </div>
+        <ul class="list-unstyled" >
+          <div id="sidebar-content">
+            <div class="d-flex active">
+              <div style="width: 22px;">
+                <i class="fas fa-home"></i>
+              </div>
+              <a href="">Home</a>
+            </div>
+            <div class="d-flex">
+              <div style="width: 22px;">
+                <i class="fas fa-search"></i>
+              </div>
+              <a href="">Search</a>
+            </div>
+            <div class="d-flex">
+              <div style="width: 22px;">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <a href="">Your Library</a>
+            </div>
+          </div>
+        </ul>
+        <div id="buttons">
+          <div id="install">
+            <i class="far fa-arrow-alt-circle-down"></i>
+            <p>Install App</p>
+          </div>
+          <hr>
+          <div id="user">
+            <i class="far fa-user"></i>
+            <p>Diego 'Ziba' Banovaz</p>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid" id="content">
+        <div id="contentHeader" style="opacity: 0.8;">
+          <div class="container" id="artistName">
+            <p style="font-size: 10px; letter-spacing: 0.2rem;">33,000,375 MONTHLY LISTENERS</p>
+            <p style="font-size: 50px; font-weight: 600;">Queen</p>
+            <div id="headerButtons">
+              <button type="button" class="btn ">PLAY</button>
+              <button type="button" class="btn ">FOLLOW</button>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+          </div>
+        </div>
+        <div id="shadow">
+          <div class="container" id="info">
+            <nav>
+              <p class="active">OVERVIEW</p>
+              <p>RELATED ARTISTS</p>
+              <p>ABOUT</p>
+            </nav>
+          </div>
+          <div class="container" id="albumCards">
+            <p style="font-weight: 600; color: white; font-size: 20px;">Albums</p>
+            <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
+              <div class="col">
+                  <div class="card my-2" >
+                    <img src="./images/artist1.PNG" alt="...">
+                    <p class="cardBody">Bohemian Rhapsody</p>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist2.PNG" alt="...">
+                  <p class="cardBody">On Air</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist3.PNG" alt="...">
+                  <p class="cardBody">A Night At The Odeon</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist4.PNG" alt="...">
+                  <p class="cardBody">Live At The Rainbow</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist4.PNG" alt="...">
+                  <p class="cardBody">Live At The Rainbow(Deluxe)</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist5.PNG" alt="...">
+                  <p class="cardBody">Hungarian Rhapsody</p>
+                </div>
+              </div>
+            </div>
+            <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist6.PNG" alt="...">
+                  <p class="cardBody">Rock Montreal</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist7.PNG" alt="...">
+                  <p class="cardBody">On Fire</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist8.PNG" alt="...">
+                  <p class="cardBody">Made In Heaven</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist9.PNG" alt="...">
+                  <p class="cardBody">Live At Wembley Stadium</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist10.PNG" alt="...">
+                  <p class="cardBody">Innuendo</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="./images/artist11.PNG" alt="...">
+                  <p class="cardBody">The Miracle</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid play-section fixed-bottom">
+        <div id="songInfo">
+          <img src="https://placehold.it/50x50" alt="">
+          <div id="song">
+            <p id="songName">Song For My Father</p>
+            <p id="singer">Horace Silver</p>
+          </div>
+          <i class="far fa-heart"></i>
+          <i class="fas fa-laptop"></i>
+        </div>
+        <div class="musicIcons">
+          <div class="d-flex mobileSongInfo">
+            <p>Song For My Father</p>
+          </div>
+          <div id="icons"> 
+            <i class="fas fa-random"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="far fa-lg fa-play-circle"></i>
+            <i class="fas fa-arrow-right"></i>
+           <i class="fas fa-redo-alt"></i>
+          </div>
+          <div class="progress" id="trackLength">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div id="volume" >
+          <div>
+            <i class="fas fa-sort-amount-down"></i>
+            <i class="fas fa-laptop"></i>
+            <i class="fas fa-volume-up"></i>
+          </div>
+          <div class="progress" id="volumeLength">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid d-block d-md-none">
+        <div id="mobileNav">
+          <i class="fas fa-home"></i>
+          <i class="fas fa-search"></i>
+          <i class="fas fa-book-open"></i>
+        </div> 
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/ddd26a46d6.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
