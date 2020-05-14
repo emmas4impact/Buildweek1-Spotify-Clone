@@ -1,0 +1,227 @@
+
+body {
+    font-family: 'Circular,Helvetica Neue,Helvetica,Arial' sans-serif;;
+}
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+.head {
+    border-bottom: 1px solid #d9dadc;
+}
+nav {
+    margin-bottom: 30px;
+}
+h5 {
+    font-size: 16px;
+    font-weight: 900;
+}
+.facebook-btn {
+    margin-top: 10px;
+    padding: 14px 18px;
+    background-color: #3B5998;
+    border-radius: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+.fa-facebook,
+.fa-apple {
+    font-size: 16px;
+    margin-right: 14px;
+}
+.apple-btn {
+    margin-top: 10px;
+    padding: 14px 18px;
+    background-color: #000;
+    border-radius: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+.divider {
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+}
+.divider-word {
+    background: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+.btn-green {
+    margin-top: 10px;
+    padding: 14px 18px;
+    background-color: green;
+    border-radius: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+.check-label {
+    padding-left: 0.6em;
+ 
+}
+.form-control {
+    border: 1px solid #d9dadc;
+    border-radius: 0;
+    font-size: 16px;
+   
+}
+  [type=checkbox]:checked {
+    background-color: #1db954;
+
+  }
+  input[type=checkbox]{
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    visibility: hidden;
+ 
+  }
+
+label {
+    font-style: italic;
+}
+  input[type=checkbox]:after {
+   content: '';
+   font-size: 20px;
+    background-color: #fff;
+    display: inline-block;
+    margin-left: 10px;
+    border: 1px solid #c1c3c6;
+    width: 1.25em;
+    height: 1.25em;
+    visibility: visible;
+    padding-left: 3px;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    bottom: 11px;
+    
+
+ 
+  }
+  input[type=checkbox]:checked + label {
+      font-style: normal;
+  }
+  input[type=checkbox]:checked:after {
+    font-style: normal;
+    background-color: #1FD760;
+    /* background-image: url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/collection/build/ionicons/svg/ios-checkmark.svg'); */
+    content: '\2713\0020';
+    color: #fff;
+    border: none;
+   
+} 
+/* 
+input[type="email"]:required {
+    border:2px solid tomato;
+} */
+
+
+ 
+.green {
+    color: #1db954;
+    font-weight: 400 !important;
+    padding:  0 15px;
+    font-size: 16px;
+}
+.haveAcc {
+    font-size: 18px;     
+    margin-top: 12px;
+    margin-bottom: 12px; 
+    font-weight: 900;
+}
+.sign-up-btn {
+    margin-top: 10px;
+    padding: 14px 18px;
+    background-color: transparent;
+    border: 2px solid grey;
+    border-radius: 50px;
+    color: grey;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+   
+}
+.sign-up-btn,
+.facebook-btn,
+.apple-btn,
+.btn-green {
+    transition: all .3s ease-in-out;
+}
+.sign-up-btn:hover {
+    background-color: grey;
+    color: #fff;
+}
+.green:hover {
+    color: #1db954;
+}
+.small-font {
+    font-size: 11.2px;
+    font-weight: 400;
+}
+.small-font a {
+    color:  #1db954;
+}
+.btn {
+  font-weight: 700;
+}
+::placeholder {
+    color: #C2C3C6 !important;
+}
+.form-check-label {
+    color: #919496 !important;
+}
+a {
+    text-decoration: none !important;
+}
+.btn:hover {
+    opacity: 0.7;
+    color: #fff;
+}
+
+.green::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    width: 0;
+    bottom: -8px;
+    background: #1db954;
+    height: 2px;
+    transition: all .4s ease-out;
+
+    
+}
+.green:hover:after {
+    width: 88%;
+    left: 5%;
+    right: auto;
+ 
+}
+.green {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+  @media (min-width: 900px) and (max-width : 1824px){
+    .content {
+        width: 50%;
+        margin: 0 auto;
+      }
+  }
