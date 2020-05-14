@@ -1,0 +1,391 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+#sidebar{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  color: white;
+  background-color: #050505;
+  margin-left: -15px;
+  width: 200px;
+  height: 91vh;
+}
+.sidebar-header{
+  padding-top: 10px;
+  padding-left: 20px;
+  display: flex;
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+.sidebar-header i{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  font-size: 25px;
+}
+.sidebar-header p{
+  margin-left: 2px;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  height: 30px;
+}
+#sidebar-content{
+  opacity: 40%;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+#sidebar-content > div{
+  margin-bottom: 0.7rem;
+}
+#sidebar-content i {
+  width: 20px;
+  font-size: 1.2rem;
+}
+#sidebar-content a {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+}
+#buttons{
+  margin-top: auto;
+  margin-left: 20px;
+}
+#install{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 30px;
+  opacity: 60%;
+}
+#install i{
+  font-size: 20px;
+}
+#install p{
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+hr{
+  background-color: white;
+  width: 160px;
+  margin: 5px auto 0px 0;
+}
+#user{
+  display: flex;
+  margin: 10px auto;
+  font-size: 12px;
+}
+#user p{
+  margin-left: 10px;
+  margin-top: 2px;
+  font-weight: 600;
+}
+#user i{
+  font-size: 20px;
+}
+#content{
+  position: absolute;
+  top: 0;
+  left: 200px;
+  min-height: 91vh;
+  /* max-height: 91vh; */
+  max-width: calc(100% - 200px);
+}
+.play-section{
+  /* position: absolute; */
+  display: flex;
+  min-height:9vh;
+  max-height: 9vh;
+  justify-content: space-between;
+  background-color: rgba(27, 26, 26, 0.986);
+  /* background-color: black; */
+  margin: 0;
+  padding: 0;
+  width: calc(100%);
+  color: #b3b3b2;
+}
+#songInfo{
+  justify-content: flex-start;
+  display: flex;
+}
+.musicIcons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#songInfo{
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  color: white;
+}
+#song{
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+#songName{
+  font-size: 12px;
+  margin: 0;
+}
+#singer{
+  font-size: 10px;
+  margin: 0;
+}
+#songInfo i{
+  font-size: 20px;
+  margin: auto 10px;
+}
+.musicIcons i{
+  padding: 0 10px;
+}
+#trackLength{
+  height: 5px !important;
+  width: 400px;
+  margin-top: 10px;
+  border-radius: 5px;
+  /* background-color: black; */
+}
+#volume{
+  display: flex;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+#volumeLength{
+  width: 60px;
+  height: 5px;
+  margin-top: 9px;
+  margin-left: 10px;
+  border-radius: 5px;
+
+}
+.mobileSongInfo{
+  display: none !important;
+}
+#content{
+  margin: 0;
+  padding: 0;
+  background-color: #181818;
+}
+#contentHeader{
+  width: 100%;
+  height: 40vh;
+  background-image: url('./images/queensCover.jpg');
+  background-position: center;
+  background-size: cover;
+  /* box-shadow: inset 50px 0px 30px 30px rgba(0, 0, 0, 0.5); */
+}
+#artistName{
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+#artistName p{
+  margin-bottom: 5px;
+}
+#headerButtons button{
+  width: 120px;
+  border-radius: 40px;
+  background-color: none;
+  font-size: 10px;
+}
+#headerButtons button:first-of-type{
+  background-color: rgb(26, 207, 90) !important;
+  color: white;
+  font-weight: 600;
+}
+#headerButtons button:nth-of-type(2){
+  border: 2px solid white;
+  color: white;
+  font-weight: 600;
+}
+#headerButtons > *{
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+#info{
+  overflow: auto;
+}
+#info nav{
+  display: flex;
+  justify-content: center;
+}
+#info nav p{
+  padding: 10px 10px;
+  font-size: 10px;
+  letter-spacing: 0.2rem;
+  color: white;
+  font-weight: 600;
+}
+#albumCards{
+  width: 90%;
+}
+#albumCards .col p{
+  font-size: 9px;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+}
+#albumCards .col .cardBody{
+  background-color: #181818;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#albumCards .col img{
+  height: 120px;
+  object-fit: cover;
+}
+#albumCards .card{
+  border-radius: 0 !important;
+  border: none !important;
+}
+#info .active::after{
+  display: inline-block;
+  content: '';
+  border-bottom: 2px solid rgb(26, 207, 90);
+  width: 30px;
+  transform: translate(-60px, 10px);
+}
+/* #info{
+  transform: translateY(-30px);
+} */
+
+#shadow{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #181818 10%) !important;
+  transform: translateY(-60px);
+}
+.card:hover img{
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+}
+.card:hover .cardBody{
+  color: rgb(26, 207, 90) !important ;
+}
+#sidebar-content a:hover{
+  transform: scale(1.1);
+  color: rgb(26, 207, 90) ;
+  transition: all .2s ease-in-out;
+}
+#shadow nav  p:hover{
+  cursor: pointer;
+  color: rgb(26, 207, 90) !important;
+}
+#headerButtons :first-child:hover{
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+  color: black;
+}
+#headerButtons :nth-child(2):hover{
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+  color: black;
+  background-color:rgb(26, 207, 90);
+}
+#headerButtons i:hover{
+  border-radius: 90%;
+  background-color: rgb(26, 207, 90);
+}
+@media only screen and (min-width:768px) and (max-width:1025px){
+  #sidebar{
+    height: 94vh;
+  }
+  #content{
+    min-height: 94vh;
+  }
+  .play-section{
+    max-height: 6vh;
+    min-height: 6vh;
+  }
+  #trackLength{
+    height: 5px !important;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 5px !important;
+    /* background-color: black; */
+  }
+  .musicIcons i{
+    padding: 0 5px;
+  }
+  #volumeLength{
+    width: 40px;
+    height: 5px;
+    margin-top: 9px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+  #song{
+    padding-right: 10px;
+  }
+  #songInfo i{
+    margin: auto 5px;
+  }
+}
+@media(max-width:767px){
+  #sidebar{
+    display: none;
+  }
+  #content{
+    left: 0;
+    max-width: 100%;
+    height: 90vh;
+  }
+  .play-section{
+    min-height: 10vh;
+    width: 100%;
+    position: fixed;
+    bottom: 5vh;
+    background-color: black;
+    padding-bottom: 5px;
+  }
+  #songInfo, #volume{
+    display: none;
+  }
+  #trackLength{
+    height: 5px !important;
+    width: 240px;
+    margin-top: 10px;
+    border-radius: 5px !important;
+    /* background-color: black; */
+  }
+  .musicIcons{
+    margin:0 auto;
+  }
+  #icons{
+    margin-top: -10px;
+  }
+  .mobileSongInfo{
+    display: flex!important;
+    justify-content: space-between!important;
+    margin: 0;
+    padding: 0;
+  }
+  #mobileNav{
+    display: flex;
+    justify-content: space-around;
+    max-height: 5vh;
+    background-color: rgb(26, 207, 90);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index :2;
+  }
+  #mobileNav i{
+    padding-top: 7px;
+    padding-bottom: 10px;
+    color: black;
+    font-size: 30px;
+  }
+}
