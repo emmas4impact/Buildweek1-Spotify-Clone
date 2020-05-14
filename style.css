@@ -1,10 +1,12 @@
 
 body {
-    font-family: 'Circular,Helvetica Neue,Helvetica,Arial' sans-serif;;
+    font-family: 'Circular,Helvetica Neue,Helvetica,Arial' sans-serif;
+   
 }
 .content {
-    width: 100%;
+    width: 50%;
     margin: 0 auto;
+    
 }
 .head {
     border-bottom: 1px solid #d9dadc;
@@ -219,9 +221,11 @@ a {
 
 
 
-  @media (min-width: 900px) and (max-width : 1824px){
+
+  @media (min-width: 400px) and (max-width: 1000px) { 
     .content {
-        width: 50%;
+        width: 100%;
         margin: 0 auto;
       }
-  }
+     
+   }
