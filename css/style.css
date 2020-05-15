@@ -245,8 +245,20 @@ a {
     }
   }
 
+@media(max-width:767px){
+    .container{
+        margin: 0;
+        padding: 0;
+    }
+    .content{
+        width: 90%;
+    }
+  }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7a5921c66bfd33bf018598710724416109ac97d1
   /* @media (min-width: 400px) and (max-width: 1000px) { 
     .content {
         width: 100%;
@@ -254,3 +266,23 @@ a {
       }
      
    } */
+<<<<<<< HEAD
+   @media only screen and (min-width:768px) and (max-width:1025px){
+
+    .container > *{
+        margin:0 auto 0 auto !important;
+        transform: scale(1.1);
+    }
+    .content{
+        width: 480px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    h5{
+        margin-top: 20px;
+    }
+  }
+=======
+>>>>>>> 7a5921c66bfd33bf018598710724416109ac97d1

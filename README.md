@@ -1,6 +1,6 @@
 ### The purpose of this project is to build a Spotify-clone
 ## In this Project We have built a Spotify page
-## Index html [Live Demo](https://rawcdn.githack.com/emmas4impact/Buildweek1-Spotify-Clone/a8b9dccb8a0644dc986a93c422de387ec07c3ceb/form.html)
+## Index html [Live Demo](https://rawcdn.githack.com/emmas4impact/Buildweek1-Spotify-Clone/8fb52a0d4731267f7a334640dd7397bb658e3818/login.html)
 
 ## Built With
 - HTML5
@@ -20,12 +20,12 @@ Clone or Download [this repository](https://github.com/emmas4impact/Buildweek1-S
 
 :bust_in_silhouette: **Oksana**
 - GitHub:[@github/oksanacoder](https://github.com/OksanaCoder)
-- Linkedin:[@linkedIn/oksana](https://www.linkedin.com/in/emmas4impact/)
+- Linkedin:[@linkedIn/oksana](https://www.linkedin.com/in/ksena19/)
 
 
 :bust_in_silhouette: **Nomfundo Verah Sibiya**
 - GitHub:[@github/nvsibiya](https://github.com/nvsibiya)
-- Linkedin:[@linkedInnvsibiya](https://www.linkedin.com/in///)
+- Linkedin:[@linkedInnvsibiya](http://linkedin.com/in/nomfundo-verah-sibiya-7180714b)
 ## :handshake: Contributing
 Contributions, issues and feature requests are welcome!
 
