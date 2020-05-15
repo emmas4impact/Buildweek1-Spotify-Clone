@@ -1,6 +1,6 @@
 ### The purpose of this project is to build a Spotify-clone
 ## In this Project We have built a Spotify page
-## Index html [Live Demo](https://rawcdn.githack.com/emmas4impact/Buildweek1-Spotify-Clone/a8b9dccb8a0644dc986a93c422de387ec07c3ceb/form.html)
+## Index html [Live Demo](https://rawcdn.githack.com/emmas4impact/Buildweek1-Spotify-Clone/2924c31de15eaff07b27dc35387382828235365b/login.html)
 
 ## Built With
 - HTML5
@@ -8,7 +8,7 @@
 - BOOTSTRAP 4
 - Javascript
 ## Getting Started
-Clone or Download [this repository](https://github.com/emmas4impact/Buildweek1-Spotify-Clone) and open file in your Code Editor
+Clone or Download [this repository](https://rawcdn.githack.com/emmas4impact/Buildweek1-Spotify-Clone/1ac0aff38f626d61cb57013665817f3f4c66cb19/login.html) and open file in your Code Editor
 ## Authors
 :bust_in_silhouette: **Mandeep Sai Bandi**
 - GitHub:[@github/mandeep-sai](https://github.com/Mandeep-Sai)
