@@ -20,12 +20,12 @@ Clone or Download [this repository](https://github.com/emmas4impact/Buildweek1-S
 
 :bust_in_silhouette: **Oksana**
 - GitHub:[@github/oksanacoder](https://github.com/OksanaCoder)
-- Linkedin:[@linkedIn/oksana](https://www.linkedin.com/in/emmas4impact/)
+- Linkedin:[@linkedIn/oksana](https://www.linkedin.com/in/ksena19/)
 
 
 :bust_in_silhouette: **Nomfundo Verah Sibiya**
 - GitHub:[@github/nvsibiya](https://github.com/nvsibiya)
-- Linkedin:[@linkedInnvsibiya](https://www.linkedin.com/in///)
+- Linkedin:[@linkedInnvsibiya](http://linkedin.com/in/nomfundo-verah-sibiya-7180714b)
 ## :handshake: Contributing
 Contributions, issues and feature requests are welcome!
 
