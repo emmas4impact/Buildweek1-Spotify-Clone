@@ -91,6 +91,15 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">DISCOVER</a>
                   </li>
+                  <li>
+                    <div class="form-inline ">
+                      <input class="form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </div>
+                  </li>
+                  <li>
+                    <button class="btn btn-outline-success my-2 my-sm-0 albumsBtn" data-toggle="modal" data-target="#exampleModal">Albums</button>
+                  </li>
                 </ul>
               </div>
             </nav>
@@ -185,7 +194,25 @@
         <i class="fas fa-book-open"></i>
       </div> 
     </div>
-    
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Albums</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <script>
     var contentNavLinks = document.querySelectorAll('#contentNav a')
@@ -196,7 +223,178 @@
         contentNavLinks[i].classList.add('active')
       })
     }
-    </script>
+    window.onload = function(){
+      var albumNames = []
+      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
+  	"method": "GET",
+  	"headers": {
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
+	}
+})
+      .then(response => response.json())
+      .then(parsedJson =>{
+          const name = parsedJson.data[0].artist.name
+          const arr = parsedJson.data
+          const cardsRow = document.querySelector('.cardRow')
+          const artistName = document.createElement('p')
+          artistName.classList.add('mt-4')
+          artistName.innerText = name
+          const box = document.createElement('div')
+          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
+          cardsRow.appendChild(artistName)
+          cardsRow.appendChild(box)
+          arr.forEach(element => {
+            albumNames.push(element.title)
+            const column = document.createElement('div')
+            column.classList.add('col')
+            const card = document.createElement('div')
+            card.setAttribute('class','card my-2')
+            const pic = document.createElement('img')
+            pic.setAttribute('src',element.album.cover)
+            const albumName = document.createElement('p')
+            albumName.classList.add('cardBody')
+            albumName.innerText = element.title
+            card.appendChild(pic)
+            card.appendChild(albumName)
+            column.appendChild(card)
+            box.appendChild(column)
+          });
+      }).catch(err => console.log(err))
+
+      // 
+      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=metallica", {
+  	"method": "GET",
+  	"headers": {
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
+	}
+})
+      .then(response => response.json())
+      .then(parsedJson =>{
+          const name = parsedJson.data[0].artist.name
+          const arr = parsedJson.data
+          const cardsRow = document.querySelector('.cardRow')
+          const artistName = document.createElement('p')
+          artistName.classList.add('mt-4')
+          artistName.innerText = name
+          const box = document.createElement('div')
+          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
+          cardsRow.appendChild(artistName)
+          cardsRow.appendChild(box)
+          arr.forEach(element => {
+            albumNames.push(element.title)
+            const column = document.createElement('div')
+            column.classList.add('col')
+            const card = document.createElement('div')
+            card.setAttribute('class','card my-2')
+            const pic = document.createElement('img')
+            pic.setAttribute('src',element.album.cover)
+            const albumName = document.createElement('p')
+            albumName.classList.add('cardBody')
+            albumName.innerText = element.title
+            card.appendChild(pic)
+            card.appendChild(albumName)
+            column.appendChild(card)
+            box.appendChild(column)
+          });
+      }).catch(err => console.log(err))
+
+      // 
+      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=behemoth", {
+  	"method": "GET",
+  	"headers": {
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
+	}
+})
+      .then(response => response.json())
+      .then(parsedJson =>{
+          const name = parsedJson.data[0].artist.name
+          const arr = parsedJson.data
+          const cardsRow = document.querySelector('.cardRow')
+          const artistName = document.createElement('p')
+          artistName.classList.add('mt-4')
+          artistName.innerText = name
+          const box = document.createElement('div')
+          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
+          cardsRow.appendChild(artistName)
+          cardsRow.appendChild(box)
+          arr.forEach(element => {
+            albumNames.push(element.title)
+            const column = document.createElement('div')
+            column.classList.add('col')
+            const card = document.createElement('div')
+            card.setAttribute('class','card my-2')
+            const pic = document.createElement('img')
+            pic.setAttribute('src',element.album.cover)
+            const albumName = document.createElement('p')
+            albumName.classList.add('cardBody')
+            albumName.innerText = element.title
+            card.appendChild(pic)
+            card.appendChild(albumName)
+            column.appendChild(card)
+            box.appendChild(column)
+          });
+      }).catch(err => console.log(err))
+
+    var albumsButton = document.querySelector('.albumsBtn')
+    var searchButton = document.querySelector('.form-inline .btn')
+    albumsButton.addEventListener('click',function(){
+      let modalBody = document.querySelector('.modal-body')
+      albumNames.forEach(element => {
+        let name = document.createElement('p')
+        name.innerText = element
+        modalBody.appendChild(name)
+      })
+    })
+    searchButton.addEventListener('click',function(){
+      let mainContainer = document.querySelector('.cardRow')
+      mainContainer.innerHTML = ''
+      let val = document.querySelector('.form-control-sm').value.toLowerCase()
+      // `https://deezerdevs-deezer.p.rapidapi.com/search?q=${val}`
+      fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${val}`, {
+  	"method": "GET",
+  	"headers": {
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
+	}
+})
+      .then(response => response.json())
+      .then(parsedJson =>{
+          const name = parsedJson.data[0].artist.name
+          const arr = parsedJson.data
+          const cardsRow = document.querySelector('.cardRow')
+          const artistName = document.createElement('p')
+          artistName.classList.add('mt-4')
+          artistName.innerText = name
+          const box = document.createElement('div')
+          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
+          cardsRow.appendChild(artistName)
+          cardsRow.appendChild(box)
+          arr.forEach(element => {
+            albumNames.push(element.title)
+            const column = document.createElement('div')
+            column.classList.add('col')
+            const card = document.createElement('div')
+            card.setAttribute('class','card my-2')
+            const pic = document.createElement('img')
+            pic.setAttribute('src',element.album.cover)
+            const albumName = document.createElement('p')
+            albumName.classList.add('cardBody')
+            albumName.innerText = element.title
+            card.appendChild(pic)
+            card.appendChild(albumName)
+            column.appendChild(card)
+            box.appendChild(column)
+          });
+      }).catch(err => console.log(err))
+      document.querySelector('.form-control-sm').value = ''
+    })
+ }
+// 
+
+ </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://kit.fontawesome.com/ddd26a46d6.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

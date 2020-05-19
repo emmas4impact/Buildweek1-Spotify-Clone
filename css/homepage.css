@@ -309,3 +309,18 @@ body{
     right: 15px !important;
   }
 }
+input[type = search]{
+  background-color: black;
+  border: none !important;
+  color: white;
+}
+.form-inline{
+  margin-left: 20px;
+}
+.form-inline .btn , .albumsBtn{
+  font-size: 10px !important;
+  margin-right: 10px;
+}
+.modal-content{
+  width: 50vw !important;
+}
