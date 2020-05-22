@@ -70,7 +70,7 @@
         </div>
       </div>
       <div class="container-fluid play-section fixed-bottom">
-        <div id="songInfo">
+        <div id="songInfo" class='song'>
           <img src="./images/queen.jpg" alt="" width="50px"  ">
           <div id="song">
             <p id="songName">Song For My Father</p>
@@ -132,8 +132,18 @@
         .then(response => response.json()).then(response=>{
           const art =document.querySelector('.test')
           const album = document.querySelector(".album")
-          element=response.data
+          const songinfo =document.querySelector('.song')
           
+          element=response.data
+          songinfo.innerHTML=''
+          
+          songinfo.innerHTML=` <img src=${element[2].album.cover_big}  alt="" width="50px"  ">
+          <div id="song">
+            <p id="songName">${element[0].title_short}</p>
+            <p id="singer">${element[2].album.title}</p>
+          </div>
+          <i class="far fa-heart"></i>
+          <i class="fas fa-laptop"></i>`
           album.innerHTML=` <div id="albumInfo">
               <img src=${element[2].album.cover_big} alt="">
               <p>${element[3].album.title} </p>
@@ -145,7 +155,10 @@
                 <i class="fas fa-ellipsis-h"></i>
               </div>
             </div>`
-           
+           const play =document.querySelector('.play')
+           play.addEventListener("click", function(e) {
+                element[0].preview
+            }, false);
           art.innerHTML=` <div id="track">
               <div id="trackName">
                 <i class="fas fa-music"></i>
