@@ -91,14 +91,8 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">DISCOVER</a>
                   </li>
-                  <li>
-                    <div class="form-inline ">
-                      <input class="form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </div>
-                  </li>
-                  <li>
-                    <button class="btn btn-outline-success my-2 my-sm-0 albumsBtn" data-toggle="modal" data-target="#exampleModal">Albums</button>
+                  <li class="nav-item">
+                    <input type="text" id="search" placeholder="search" autocomplete="off" onkeyup="filterSearch()">
                   </li>
                 </ul>
               </div>
@@ -224,8 +218,9 @@
       })
     }
     window.onload = () =>{
-      loadAlbums('edsheeran')
-    }
+          loadAlbums('edsheeran')
+          loadAlbums('Sia')
+        } 
     const loadAlbums = (artistName) =>{
       fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`, {
 	    "method": "GET",
@@ -240,56 +235,100 @@
           let firstSet = albumArray.slice(0,6)
           let secondSet = albumArray.slice(6,12)
           let displaySet = firstSet
-          console.log(firstSet)
-          console.log(secondSet)
+          // console.log(firstSet)
+          // console.log(secondSet)
           let container = document.querySelector('.cardRow')
           container.innerHTML += `
-          <p class"mt-4">${artistName}</p>
+          <div style="position:relative;">
+            <p class="mt-4"><a href = 'artists.html?artist=${artistName}'>${artistName.toUpperCase()}</a></p>
+            <p style="position: absolute; right: 20px; top: 0;" class="next" ><i class="fas fa-arrow-right"  style="color: white;"></i></p>
             <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
               <div class="col">
                 <div class="card my-2" >
                   <img src="${displaySet[0].album.cover_big}" alt="...">
-                  <p class="cardBody"><a href=''>${displaySet[0].title}</a><br><a href=''>${displaySet[0].album.title}</a></p>
+                  <p class="cardBody"><a href=''>${displaySet[0].title}</a><br><a href='artists.html?artist=${displaySet[0].album.title}'>${displaySet[0].album.title}</a></p>
                 </div>
               </div>
               <div class="col">
                 <div class="card my-2" >
                   <img src="${displaySet[1].album.cover_big}" alt="...">
-                  <p class="cardBody"><a href=''>${displaySet[1].title}</a><br><a href=''>${displaySet[1].album.title}</a></p>
+                  <p class="cardBody"><a href=''>${displaySet[1].title}</a><br><a href='artists.html?artist=${displaySet[1].album.title}'>${displaySet[1].album.title}</a></p>
                 </div>
               </div>
               <div class="col">
                 <div class="card my-2" >
                   <img src="${displaySet[2].album.cover_big}" alt="...">
-                  <p class="cardBody"><a href=''>${displaySet[2].title}</a><br><a href=''>${displaySet[2].album.title}</a></p>
+                  <p class="cardBody"><a href=''>${displaySet[2].title}</a><br><a href='artists.html?artist=${displaySet[2].album.title}'>${displaySet[2].album.title}</a></p>
                 </div>
               </div>
               <div class="col">
                 <div class="card my-2" >
                   <img src="${displaySet[3].album.cover_big}" alt="...">
-                  <p class="cardBody"><a href=''>${displaySet[3].title}</a><br><a href=''>${displaySet[3].album.title}</a></p>
+                  <p class="cardBody"><a href=''>${displaySet[3].title}</a><br><a href='artists.html?artist=${displaySet[3].album.title}'>${displaySet[3].album.title}</a></p>
                 </div>
               </div>
               <div class="col">
                 <div class="card my-2" >
                   <img src="${displaySet[4].album.cover_big}" alt="...">
-                  <p class="cardBody"><a href=''>${displaySet[4].title}</a><br><a href=''>${displaySet[4].album.title}</a></p>
+                  <p class="cardBody"><a href=''>${displaySet[4].title}</a><br><a href='artists.html?artist=${displaySet[4].album.title}'>${displaySet[4].album.title}</a></p>
                 </div>
               </div>
               <div class="col">
                 <div class="card my-2" >
                   <img src="${displaySet[5].album.cover_big}" alt="...">
-                  <p class="cardBody"><a href=''>${displaySet[5].title}</a><br><a href=''>${displaySet[5].album.title}</p>
+                  <p class="cardBody"><a href=''>${displaySet[5].title}</a><br><a href='artists.html?artist=${displaySet[5].album.title}'>${displaySet[5].album.title}</p>
                 </div>
               </div>
             </div>
+          <div>
           `
         })
         // error
         .catch(err => {
           console.log(err);
         });
+    }  
+    const filterSearch = () =>{
+      let val = document.querySelector('#search').value.toLowerCase()
+      let container = document.querySelector('.cardRow')
+      if(val.length>0){
+        // newRow.style.display = 'none'
+        fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${val}`, {
+          "method": "GET",
+          "headers": {
+		    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		    "x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
+	}
+}).then(response => response.json())
+  .then(parsedJson => {
+    let arr = parsedJson.data
+    container.innerHTML = ''
+    let resultText = document.createElement('p')
+    resultText.classList.add('mt-4')
+    resultText.innerText = `Search results for  "${val}"`
+    let newRow = document.createElement('div')
+    newRow.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
+    container.appendChild(resultText)
+    container.appendChild(newRow)
+    let filteredSongs = arr.filter(element => element.title.includes(val))
+    console.log(filteredSongs)
+    for(let i=0;i<filteredSongs.length;i++){
+      newRow.innerHTML += `
+      <div class="col">
+          <div class="card my-2" >
+            <img src="${filteredSongs[i].album.cover_big}" alt="...">
+            <p class="cardBody"><a href=''>${filteredSongs[i].title}</a><br><a href=''>${filteredSongs[i].album.title}</a></p>
+          </div>
+      </div>
+      `
     }
+  })
+
+      }else{
+        container.style.display = 'block'
+      }
+      
+    } 
  </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://kit.fontawesome.com/ddd26a46d6.js" crossorigin="anonymous"></script>
