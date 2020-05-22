@@ -17,6 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
     <title>Spotify</title>
+    <style>
+    a {
+      color: #fff;
+    }
+    #albumCards {
+      margin-top: 50px;
+    }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -81,6 +89,7 @@
             </nav>
           </div>
           <div class="container" id="albumCards">
+            
             <p style="font-weight: 600; color: white; font-size: 20px;">Albums</p>
             <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
               <div class="col">
@@ -246,6 +255,15 @@
         // });
         let box = document.querySelector('#albumCards');
         box.innerHTML = '';
+        let p = document.createElement('p');
+        p.innerText = 'Albums';
+        p.style.color = 'white';
+        box.appendChild(p);
+
+        let newRow = document.createElement('div');
+        newRow.classList.add('row');
+        newRow.setAttribute('class', 'row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6');
+        box.appendChild(newRow);
         arr.forEach(element => {
           
    
@@ -255,47 +273,13 @@
         //   img.setAttribute('src',arr.album.cover_big)
         // })
       // let box = document.querySelector('#albumCards');
-      box.innerHTML += `
-      <a href="artists.html?artist=${artistName}">
-          <p class"mt-4">${artistName}</p>
-          </a>
-            <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
+      newRow.innerHTML += `
+      
               <div class="col">
                 <div class="card my-2" >
                   <img src="${element.album.cover}" alt="...">
-                  <p class="cardBody"><a href=''>${element.album.title}</a><br><a href=''>${element.album.title}</a></p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card my-2" >
-                  <img src="${element.album.cover}" alt="...">
-                  <p class="cardBody"><a href=''>${element.album.title}</a><br><a href=''>${element.album.title}</a></p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card my-2" >
-                  <img src="${element.album.cover}" alt="...">
-                  <p class="cardBody"><a href=''>${element.album.title}</a><br><a href=''>${element.album.title}</a></p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card my-2" >
-                  <img src="${element.album.cover}" alt="...">
-                  <p class="cardBody"><a href=''>${element.album.title}</a><br><a href=''>${element.album.title}</a></p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card my-2" >
-                  <img src="${element.album.cover}" alt="...">
-                  <p class="cardBody"><a href=''>${element.album.title}</a><br><a href=''>${element.album.title}</a></p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card my-2" >
-                  <img src="${element.album.cover}" alt="...">
-                  <p class="cardBody"><a href=''>${element.album.title}</a><br><a href=''>${element.album.title}</p>
-                </div>
-              </div>
+                  <p class="cardBody"><a href=''>${element.album.title}</a></p>
+                </div>       
             </div>
           `
         })
