@@ -105,7 +105,9 @@
             </nav>
           </nav>
           <div class="container cardRow">
-            <p>#THROWBACKTHURSDAY</p>
+      
+              <p>#THROWBACKTHURSDAY</p>
+          
             <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
               <div class="col">
                 <div class="card my-2" >
@@ -144,7 +146,9 @@
                 </div>
               </div>
             </div>
+          
             <p class="mt-4">Classifiche</p>
+         
             <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
               <div class="col">
                 <div class="card my-2" >
@@ -228,12 +232,7 @@
     }
     window.onload = () =>{
       loadAlbums('edsheeran')
-      const urlParams = new URLSearchParams(window.location.search); 
-        const artist = urlParams.get("artist")
-        let artistName = document.querySelector('#artistName p:nth-of-type(2)')
-        console.log(artistName)
-        artistName.innerText = artist.toUpperCase()
-      
+        
     }
     const loadAlbums = (artistName) =>{
       fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`, {
@@ -253,7 +252,7 @@
           console.log(secondSet)
           let container = document.querySelector('.cardRow')
           container.innerHTML += `
-          <a href="artists.html?artistName=${artistName}">
+          <a href="artists.html?artist=${artistName}">
           <p class"mt-4">${artistName}</p>
           </a>
             <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
