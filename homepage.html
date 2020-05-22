@@ -223,177 +223,73 @@
         contentNavLinks[i].classList.add('active')
       })
     }
-    window.onload = function(){
-      var albumNames = []
-      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
-  	"method": "GET",
-  	"headers": {
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
+    window.onload = () =>{
+      loadAlbums('edsheeran')
+    }
+    const loadAlbums = (artistName) =>{
+      fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`, {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		    "x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
 	}
 })
-      .then(response => response.json())
-      .then(parsedJson =>{
-          const name = parsedJson.data[0].artist.name
-          const arr = parsedJson.data
-          const cardsRow = document.querySelector('.cardRow')
-          const artistName = document.createElement('p')
-          artistName.classList.add('mt-4')
-          artistName.innerText = name
-          const box = document.createElement('div')
-          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
-          cardsRow.appendChild(artistName)
-          cardsRow.appendChild(box)
-          arr.forEach(element => {
-            albumNames.push(element.title)
-            const column = document.createElement('div')
-            column.classList.add('col')
-            const card = document.createElement('div')
-            card.setAttribute('class','card my-2')
-            const pic = document.createElement('img')
-            pic.setAttribute('src',element.album.cover)
-            const albumName = document.createElement('p')
-            albumName.classList.add('cardBody')
-            albumName.innerText = element.title
-            card.appendChild(pic)
-            card.appendChild(albumName)
-            column.appendChild(card)
-            box.appendChild(column)
-          });
-      }).catch(err => console.log(err))
-
-      // 
-      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=metallica", {
-  	"method": "GET",
-  	"headers": {
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
-	}
-})
-      .then(response => response.json())
-      .then(parsedJson =>{
-          const name = parsedJson.data[0].artist.name
-          const arr = parsedJson.data
-          const cardsRow = document.querySelector('.cardRow')
-          const artistName = document.createElement('p')
-          artistName.classList.add('mt-4')
-          artistName.innerText = name
-          const box = document.createElement('div')
-          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
-          cardsRow.appendChild(artistName)
-          cardsRow.appendChild(box)
-          arr.forEach(element => {
-            albumNames.push(element.title)
-            const column = document.createElement('div')
-            column.classList.add('col')
-            const card = document.createElement('div')
-            card.setAttribute('class','card my-2')
-            const pic = document.createElement('img')
-            pic.setAttribute('src',element.album.cover)
-            const albumName = document.createElement('p')
-            albumName.classList.add('cardBody')
-            albumName.innerText = element.title
-            card.appendChild(pic)
-            card.appendChild(albumName)
-            column.appendChild(card)
-            box.appendChild(column)
-          });
-      }).catch(err => console.log(err))
-
-      // 
-      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=behemoth", {
-  	"method": "GET",
-  	"headers": {
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
-	}
-})
-      .then(response => response.json())
-      .then(parsedJson =>{
-          const name = parsedJson.data[0].artist.name
-          const arr = parsedJson.data
-          const cardsRow = document.querySelector('.cardRow')
-          const artistName = document.createElement('p')
-          artistName.classList.add('mt-4')
-          artistName.innerText = name
-          const box = document.createElement('div')
-          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
-          cardsRow.appendChild(artistName)
-          cardsRow.appendChild(box)
-          arr.forEach(element => {
-            albumNames.push(element.title)
-            const column = document.createElement('div')
-            column.classList.add('col')
-            const card = document.createElement('div')
-            card.setAttribute('class','card my-2')
-            const pic = document.createElement('img')
-            pic.setAttribute('src',element.album.cover)
-            const albumName = document.createElement('p')
-            albumName.classList.add('cardBody')
-            albumName.innerText = element.title
-            card.appendChild(pic)
-            card.appendChild(albumName)
-            column.appendChild(card)
-            box.appendChild(column)
-          });
-      }).catch(err => console.log(err))
-
-    var albumsButton = document.querySelector('.albumsBtn')
-    var searchButton = document.querySelector('.form-inline .btn')
-    albumsButton.addEventListener('click',function(){
-      let modalBody = document.querySelector('.modal-body')
-      albumNames.forEach(element => {
-        let name = document.createElement('p')
-        name.innerText = element
-        modalBody.appendChild(name)
-      })
-    })
-    searchButton.addEventListener('click',function(){
-      let mainContainer = document.querySelector('.cardRow')
-      mainContainer.innerHTML = ''
-      let val = document.querySelector('.form-control-sm').value.toLowerCase()
-      // `https://deezerdevs-deezer.p.rapidapi.com/search?q=${val}`
-      fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${val}`, {
-  	"method": "GET",
-  	"headers": {
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-		"x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
-	}
-})
-      .then(response => response.json())
-      .then(parsedJson =>{
-          const name = parsedJson.data[0].artist.name
-          const arr = parsedJson.data
-          const cardsRow = document.querySelector('.cardRow')
-          const artistName = document.createElement('p')
-          artistName.classList.add('mt-4')
-          artistName.innerText = name
-          const box = document.createElement('div')
-          box.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
-          cardsRow.appendChild(artistName)
-          cardsRow.appendChild(box)
-          arr.forEach(element => {
-            albumNames.push(element.title)
-            const column = document.createElement('div')
-            column.classList.add('col')
-            const card = document.createElement('div')
-            card.setAttribute('class','card my-2')
-            const pic = document.createElement('img')
-            pic.setAttribute('src',element.album.cover)
-            const albumName = document.createElement('p')
-            albumName.classList.add('cardBody')
-            albumName.innerText = element.title
-            card.appendChild(pic)
-            card.appendChild(albumName)
-            column.appendChild(card)
-            box.appendChild(column)
-          });
-      }).catch(err => console.log(err))
-      document.querySelector('.form-control-sm').value = ''
-    })
- }
-// 
-
+        .then(response => response.json())
+        .then(parsedJson => {
+          let albumArray = parsedJson.data
+          let firstSet = albumArray.slice(0,6)
+          let secondSet = albumArray.slice(6,12)
+          let displaySet = firstSet
+          console.log(firstSet)
+          console.log(secondSet)
+          let container = document.querySelector('.cardRow')
+          container.innerHTML += `
+          <p class"mt-4">${artistName}</p>
+            <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="${displaySet[0].album.cover_big}" alt="...">
+                  <p class="cardBody"><a href=''>${displaySet[0].title}</a><br><a href=''>${displaySet[0].album.title}</a></p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="${displaySet[1].album.cover_big}" alt="...">
+                  <p class="cardBody"><a href=''>${displaySet[1].title}</a><br><a href=''>${displaySet[1].album.title}</a></p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="${displaySet[2].album.cover_big}" alt="...">
+                  <p class="cardBody"><a href=''>${displaySet[2].title}</a><br><a href=''>${displaySet[2].album.title}</a></p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="${displaySet[3].album.cover_big}" alt="...">
+                  <p class="cardBody"><a href=''>${displaySet[3].title}</a><br><a href=''>${displaySet[3].album.title}</a></p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="${displaySet[4].album.cover_big}" alt="...">
+                  <p class="cardBody"><a href=''>${displaySet[4].title}</a><br><a href=''>${displaySet[4].album.title}</a></p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="${displaySet[5].album.cover_big}" alt="...">
+                  <p class="cardBody"><a href=''>${displaySet[5].title}</a><br><a href=''>${displaySet[5].album.title}</p>
+                </div>
+              </div>
+            </div>
+          `
+        })
+        // error
+        .catch(err => {
+          console.log(err);
+        });
+    }
  </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://kit.fontawesome.com/ddd26a46d6.js" crossorigin="anonymous"></script>
