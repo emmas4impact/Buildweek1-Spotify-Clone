@@ -217,6 +217,13 @@
         contentNavLinks[i].classList.add('active')
       })
     }
+    var filteredContainer = document.createElement('div')
+    var mainContainer = document.querySelector('#content')
+    filteredContainer.setAttribute('class','container cardRow filteredContainer')
+    mainContainer.appendChild(filteredContainer)
+    var newRow = document.createElement('div')
+    newRow.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
+    filteredContainer.appendChild(newRow)
     window.onload = () =>{
           loadAlbums('edsheeran')
           loadAlbums('Sia')
@@ -287,12 +294,16 @@
         .catch(err => {
           console.log(err);
         });
-    }  
+    }
+
     const filterSearch = () =>{
       let val = document.querySelector('#search').value.toLowerCase()
       let container = document.querySelector('.cardRow')
       if(val.length>0){
-        // newRow.style.display = 'none'
+        filteredContainer.style.display = 'block'
+        container.style.display = 'none'
+        
+
         fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${val}`, {
           "method": "GET",
           "headers": {
@@ -302,29 +313,23 @@
 }).then(response => response.json())
   .then(parsedJson => {
     let arr = parsedJson.data
-    container.innerHTML = ''
-    let resultText = document.createElement('p')
-    resultText.classList.add('mt-4')
-    resultText.innerText = `Search results for  "${val}"`
-    let newRow = document.createElement('div')
-    newRow.setAttribute('class','row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6')
-    container.appendChild(resultText)
-    container.appendChild(newRow)
-    let filteredSongs = arr.filter(element => element.title.includes(val))
+    let filteredSongs = arr.filter(song => song.title.includes(val))
     console.log(filteredSongs)
-    for(let i=0;i<filteredSongs.length;i++){
+    newRow.innerHTML = ''
+    filteredSongs.forEach(element => {
       newRow.innerHTML += `
       <div class="col">
-          <div class="card my-2" >
-            <img src="${filteredSongs[i].album.cover_big}" alt="...">
-            <p class="cardBody"><a href=''>${filteredSongs[i].title}</a><br><a href=''>${filteredSongs[i].album.title}</a></p>
-          </div>
+        <div class="card my-2" >
+          <img src="${element.album.cover_big}" alt="...">
+          <p class="cardBody"><a href=''>${element.title}</a><br><a href=''>${element.album.title}</a></p>
+        </div>
       </div>
       `
-    }
+    });
   })
 
-      }else{
+      }else if(val.length === 0){
+        filteredContainer.style.display = 'none'
         container.style.display = 'block'
       }
       
