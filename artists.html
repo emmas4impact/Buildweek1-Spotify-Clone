@@ -208,6 +208,96 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<<<<<<< Updated upstream
+=======
+    <script>
+
+      const urlParams = new URLSearchParams(window.location.search); 
+        const artist = urlParams.get("artist")
+        let artistName = document.querySelector('#artistName p:nth-of-type(2)')
+        console.log(artistName)
+        artistName.innerText = artist.toUpperCase()  
+         
+      //  let box = document.querySelector('#albumCards');
+      //  console.log(box);
+      //   box.style.display  = 'none'; 
+       
+
+       window.onload = () =>{
+      loadAlbums('edsheeran')
+      loadAlbums('Snoop Dog')
+      loadAlbums('50 Cents')
+        
+    }
+   
+
+        const loadAlbums = (artistName) =>{
+      fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`, {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		    "x-rapidapi-key": "49a206362dmshb20519b822912b7p1dc792jsn37f9d0304fcc"
+	}
+}).then(response => response.json())
+        .then(parsedJson => {
+          let arr= parsedJson.data;
+        console.log(arr);
+        //   let albumNames = document.querySelectorAll('.cardBody');
+        // console.log(albumNames);
+        // albumNames.forEach(item => {
+        //   item.innerHTML = arr[0].album.title;
+        //   console.log(item);
+        // });
+        let box = document.querySelector('#albumCards');
+        box.innerHTML = '';
+        let p = document.createElement('p');
+        p.innerText = 'Albums';
+        p.style.color = 'white';
+        box.appendChild(p);
+
+        let newRow = document.createElement('div');
+        newRow.classList.add('row');
+        newRow.setAttribute('class', 'row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6');
+        box.appendChild(newRow);
+        arr.forEach(element => {
+          
+   
+
+        // let imgs = document.querySelectorAll('.card img');
+        // imgs.forEach(img => {
+        //   img.setAttribute('src',arr.album.cover_big)
+        // })
+      // let box = document.querySelector('#albumCards');
+      newRow.innerHTML += `
+      
+              <div class="col">
+                <div class="card my-2" >
+                  <img src="${element.album.cover}" alt="...">
+                  <p class="cardBody"><a href=''>${element.album.title}</a></p>
+                </div>       
+            </div>
+          `
+        })
+        })
+        // let albumNames = document.querySelectorAll('.cardBody');
+        // console.log(albumNames);
+        // albumNames.forEach(item => {
+        //   item.innerHTML =`<p> New title </p>`
+        //   console.logI(item);
+        // });
+
+        // let imgs = document.querySelectorAll('img');
+        // imgs.forEach(img => {
+        //   img.src = '';
+        // })
+        .catch(err => {
+          console.log(err);
+        });
+  
+        }
+    
+    </script>
+>>>>>>> Stashed changes
     <script src="https://kit.fontawesome.com/ddd26a46d6.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

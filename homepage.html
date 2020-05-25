@@ -198,7 +198,8 @@
     }
     window.onload = () =>{
           loadAlbums('edsheeran')
-          loadAlbums('Sia')
+          loadAlbums('SAI')
+          loadAlbums('50 Cents')
         } 
     const loadAlbums = (artistName) =>{
       fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`, {
@@ -217,6 +218,13 @@
           // console.log(firstSet)
           // console.log(secondSet)
           let container = document.querySelector('.cardRow')
+          for (let i = 0; i < albumArray.length; i++) {
+            const element = albumArray[i]; 
+            container.innerHTML += ``
+            
+            
+            
+          }
           container.innerHTML += `
           <div style="position:relative;">
             <p class="mt-4"><a href = 'artists.html?artist=${artistName}'>${artistName.toUpperCase()}</a></p>
